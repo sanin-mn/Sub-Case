@@ -7,11 +7,14 @@ import About from './Pages/About';
 import Register from './Pages/Register';
 import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 
 function App() {
   return (
     <div>
+      <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -21,6 +24,7 @@ function App() {
         <Route path='/contribute' element={<Contribute/>}/>
         <Route path='/about' element={<About/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }
