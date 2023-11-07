@@ -6,7 +6,7 @@ import Header_logo from '../Assets/SC_Logo.png'
 
 function Header() {
   return (
-    <Navbar expand="lg" style={{backgroundColor:'#991f00'}}>
+    <Navbar expand="lg fixed-top" style={{backgroundColor:'#991f00'}}>
       <Container >
       <Navbar.Brand href="#home">
             <img
@@ -20,11 +20,11 @@ function Header() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="justify-content-end flex-grow-1">
-            <Nav.Link href="#action1" className='fw-bold text-warning'>HOME</Nav.Link>
-            <Nav.Link href="#action2" className='fw-bold text-warning'>ABOUT</Nav.Link>
-            <Nav.Link href="#action3" className='fw-bold text-warning'>SUBTITLES</Nav.Link>
-            <Nav.Link href="#action4" className='fw-bold text-warning'>CONTRIBUTE</Nav.Link>
-            <Nav.Link href="#action5" className='fw-bold text-warning'>CONTACT</Nav.Link>
+            <Nav.Link href="#action1" className='fw-bold text-white'>HOME</Nav.Link>
+            <Nav.Link href="#action2" className='fw-bold text-white'>ABOUT</Nav.Link>
+            <Nav.Link href="#action3" className='fw-bold text-white'>SUBTITLES</Nav.Link>
+            <Nav.Link href="#action4" className='fw-bold text-white'>CONTRIBUTE</Nav.Link>
+            <Nav.Link href="#action5" className='fw-bold text-white'>CONTACT</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>
