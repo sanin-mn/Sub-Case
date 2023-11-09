@@ -1,5 +1,9 @@
 .App {
   text-align: center;
 }
-
-
+.accordion-button {
+  background-color: #242424 !important;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}

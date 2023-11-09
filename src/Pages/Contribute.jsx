@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contribute() {
   return (
-    <div>Contribute</div>
+    <div className='bg-dark vh-100'>Contribute</div>
   )
 }
 

@@ -9,7 +9,7 @@ function HomeSubs() {
   return (
     <div>  
       <Marquee>
-        <Row className='mt-5'>
+        <Row className='mt-4'>
               <Col className='py-2 p-3 px-5'>
                   <SubCards/>
               </Col>
