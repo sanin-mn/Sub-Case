@@ -21,15 +21,17 @@ function AllSubtitles() {
                 onHide={() => setLgShow(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
-                <Modal.Header closeButton>
+                <Modal.Header closeButton className='bg-danger'>
                     <Modal.Title id="example-modal-sizes-title-lg">
                         <h4>Movie Name</h4>
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className='bg-danger'>
+                    <h4>About</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cupiditate ullam doloribus deserunt placeat, omnis et non, perferendis iure neque impedit! Voluptates ex officia fuga id dicta obcaecati, optio magni!</p>
                     <TableModal />
                 </Modal.Body>
-                <Modal.Footer className='d-flex justify-content-center'>
+                <Modal.Footer className='d-flex justify-content-center bg-danger'>
                     <Button className='fw-bold' variant="warning">Download {' '}<i class="fa-solid fa-file-arrow-down fa-bounce"></i></Button>
                 </Modal.Footer>
             </Modal>

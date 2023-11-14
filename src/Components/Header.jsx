@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Header_logo from '../Assets/SC_Logo.png'
 import { Button,Form} from "react-bootstrap";
+import { Link } from 'react-router-dom';
+
 
 function Header({insideSubtitles}) {
   return (
@@ -43,7 +45,7 @@ function Header({insideSubtitles}) {
             <Nav.Link href="/about" className='fw-bold text-dark'>ABOUT</Nav.Link>
             <Nav.Link href="/subtitles" className='fw-bold text-dark'>SUBTITLES</Nav.Link>
             <Nav.Link href="/contribute" className='fw-bold text-dark'>CONTRIBUTE</Nav.Link>
-            <Nav.Link href="#action5" className='fw-bold text-dark'>CONTACT</Nav.Link>
+            <Link to={'/login'}><Button variant="outline-dark">Login</Button></Link>
 
           </Nav>
         </Navbar.Collapse>

@@ -5,11 +5,9 @@ import Home from './Pages/Home';
 import Subtitles from './Pages/Subtitles';
 import Contribute from './Pages/Contribute';
 import About from './Pages/About';
-import Register from './Pages/Register';
-import Dashboard from './Pages/Dashboard';
-import Login from './Pages/Login';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Auth from './Components/Auth';
 
 
 
@@ -19,9 +17,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/login' element={<Auth/>}/>
+        <Route path='/register' element={<Auth register/> }/>
         <Route path='/subtitles' element={<Subtitles/>}/>
         <Route path='/contribute' element={<Contribute/>}/>
         <Route path='/about' element={<About/>}/>

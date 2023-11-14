@@ -14,7 +14,6 @@ function Footer() {
             </h4>
             <p className="menu p-3">
               <Link to={'/'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Home</Link>
-              <Link to={'/dashboard'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Dashboard</Link>
               <Link to={'/contribute'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Contribute</Link>
               <Link to={'/about'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>About</Link>
               <Link to={'/subtitles'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>All Sub</Link>
