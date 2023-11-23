@@ -4,12 +4,22 @@ import AboutAccord from '../Components/AboutAccord'
 import HomeDescription from '../Components/HomeDescription'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 
 
 function Home() {
   const [isLoggedIn,setLoggedIn] = useState(false)
+
+  useEffect(()=>{
+    if(localStorage.getItem("existingUser")){
+      setLoggedIn(true)
+    }else{
+      setLoggedIn(false)
+    }
+  },[])
+
   return (
     <div className='bg-dark w-100' style={{ paddingTop: '100px', overflowX: 'hidden' }}>
       <h5 className='text-center text-white'>New Releases</h5>

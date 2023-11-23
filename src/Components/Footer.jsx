@@ -17,6 +17,8 @@ function Footer() {
               <Link to={'/contribute'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Contribute</Link>
               <Link to={'/about'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>About</Link>
               <Link to={'/subtitles'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>All Sub</Link>
+              <Link to={'/admin'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Admin</Link>
+
             </p>
             <ul className="p-0">
               <i className="fa-brands fa-facebook fa-xl p-2"></i>

@@ -8,6 +8,8 @@ import About from './Pages/About';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Auth from './Components/Auth';
+import Account from './Pages/Account';
+import Admin from './Pages/Admin';
 
 
 
@@ -22,6 +24,8 @@ function App() {
         <Route path='/subtitles' element={<Subtitles/>}/>
         <Route path='/contribute' element={<Contribute/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/account' element={<Account/>}/>
+        <Route path='/admin' element={<Admin/>}/>
       </Routes>
       <Footer/>
     </div>

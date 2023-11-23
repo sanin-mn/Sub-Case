@@ -3,6 +3,7 @@ import AllSubtitles from '../Components/AllSubtitles'
 import Header from '../Components/Header';
 
 function Subtitles() {
+
   return (
     <div className='bg-dark' style={{ paddingTop: '100px' }}>
       <p className='text-center text-white'>All Movies</p>

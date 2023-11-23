@@ -28,8 +28,9 @@ function AllSubtitles() {
                 </Modal.Header>
                 <Modal.Body className='bg-danger'>
                     <h4>About</h4>
-                    <p className='text-light'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cupiditate ullam doloribus deserunt placeat, omnis et non, perferendis iure neque impedit! Voluptates ex officia fuga id dicta obcaecati, optio magni!</p>
                     <TableModal />
+                    <p><i className="fa-brands fa-imdb fa-2xl me-3"></i>{''}<i className="fa-solid fa-star fa-lg text-warning"></i>63/40</p>
+                    <p className='text-light'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cupiditate ullam doloribus deserunt placeat, omnis et non, perferendis iure neque impedit! Voluptates ex officia fuga id dicta obcaecati, optio magni!</p>
                 </Modal.Body>
                 <Modal.Footer className='d-flex justify-content-center bg-danger'>
                     <Button className='fw-bold' variant="warning">Download {' '}<i class="fa-solid fa-file-arrow-down fa-bounce"></i></Button>

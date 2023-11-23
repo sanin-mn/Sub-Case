@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
-import { registerApi } from '../services/allApis'
+import { loginApi, registerApi } from '../services/allApis'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,6 +29,31 @@ function Auth({ register }) {
           username: "", email: "", password: ""
         })
         navigate('/login')
+      }else{
+        toast.warning(res.response.data)
+      }
+    }
+  }
+
+  const handleLogin = async (e)=>{
+    e.preventDefault()
+    const {email,password} = userData
+    if(!email || !password){
+      toast.info("Please fill the form comlpletly")
+    }else{
+      // api call
+      const res = await loginApi({email,password})
+      console.log(res);
+      if(res.status===200){
+        // save res
+        localStorage.setItem("existingUser",JSON.stringify(res.data.existingUser))
+        localStorage.setItem("Role",res.data.role)
+        sessionStorage.setItem("token",res.data.token)
+        // reset state
+        setUserData({
+          email: "", password: ""
+        })
+        navigate('/')
       }else{
         toast.warning(res.response.data)
       }
@@ -64,7 +89,7 @@ function Auth({ register }) {
                   <p className='mt-3'>Already have an account ? <Link to={'/login'}>Login Here</Link></p>
                 </div> :
                 <div>
-                  <Button variant='warning' type='submit' size='md'>Login</Button>
+                  <Button onClick={handleLogin} variant='warning' type='submit' size='md'>Login</Button>
                   <p className='mt-3'>If you are New user ? <Link to={'/register'}>Register Here</Link></p>
                 </div>
             }
