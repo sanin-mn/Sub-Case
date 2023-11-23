@@ -28,7 +28,7 @@ function AllSubtitles() {
                 </Modal.Header>
                 <Modal.Body className='bg-danger'>
                     <h4>About</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cupiditate ullam doloribus deserunt placeat, omnis et non, perferendis iure neque impedit! Voluptates ex officia fuga id dicta obcaecati, optio magni!</p>
+                    <p className='text-light'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cupiditate ullam doloribus deserunt placeat, omnis et non, perferendis iure neque impedit! Voluptates ex officia fuga id dicta obcaecati, optio magni!</p>
                     <TableModal />
                 </Modal.Body>
                 <Modal.Footer className='d-flex justify-content-center bg-danger'>

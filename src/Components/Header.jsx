@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 
 
 function Header({insideSubtitles}) {
+  const [isLoggedIn,setLoggedIn] = useState(true)
+
   return (
     <Navbar expand="lg fixed-top" className='bg-warning'>
       <Container >
@@ -42,8 +44,12 @@ function Header({insideSubtitles}) {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="justify-content-end flex-grow-1">
             <Nav.Link href="/" className='fw-bold text-dark'>HOME</Nav.Link>
-            <Nav.Link href="/about" className='fw-bold text-dark'>ABOUT</Nav.Link>
-            <Nav.Link href="/subtitles" className='fw-bold text-dark'>SUBTITLES</Nav.Link>
+            { isLoggedIn?
+              <Nav.Link href="/subtitles" className='fw-bold text-dark'>SUBTITLES</Nav.Link>
+              :
+              <Nav.Link href="/register" className='fw-bold text-dark'>SUBTITLES</Nav.Link>
+
+            }
             <Nav.Link href="/contribute" className='fw-bold text-dark'>CONTRIBUTE</Nav.Link>
             <Link to={'/login'}><Button variant="outline-dark">Login</Button></Link>
 

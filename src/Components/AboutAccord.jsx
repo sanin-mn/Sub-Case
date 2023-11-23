@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 function AboutAccord() {
     return (
         <div className='d-flex justify-content-center'>
-            <Accordion alwaysOpen flush className='w-75 mt-5 text-white'>
+            <Accordion  flush className='w-75 mt-5 text-white'>
                 <Accordion.Item eventKey="0" className='text-white' style={{backgroundColor:'#242424'}}>
                     <Accordion.Header><h5 className='text-white fw-light'>What is Subcase ?</h5></Accordion.Header>
                     <Accordion.Body>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HomeSubs from '../Components/HomeSubs'
 import AboutAccord from '../Components/AboutAccord'
 import HomeDescription from '../Components/HomeDescription'
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 
 
 function Home() {
+  const [isLoggedIn,setLoggedIn] = useState(false)
   return (
     <div className='bg-dark w-100' style={{ paddingTop: '100px', overflowX: 'hidden' }}>
       <h5 className='text-center text-white'>New Releases</h5>
@@ -16,9 +17,15 @@ function Home() {
       <HomeSubs />
 
       <div className="text-center mt-5">
-      <Link to={'/subtitles'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
+        
+      { isLoggedIn?
+        <Link to={'/subtitles'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
          All Subtitle{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade d-inline"></i>
-        </Button></Link>
+        </Button></Link>:
+        <Link to={'/register'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
+        Getting Started{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade d-inline"></i>
+       </Button></Link>
+        }
       </div>
 
       <section style={{ marginTop: '4rem' }} >
