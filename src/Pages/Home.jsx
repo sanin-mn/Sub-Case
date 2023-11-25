@@ -32,7 +32,7 @@ function Home() {
         <Link to={'/subtitles'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
          All Subtitle{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade d-inline"></i>
         </Button></Link>:
-        <Link to={'/register'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
+        <Link to={'/login'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
         Getting Started{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade d-inline"></i>
        </Button></Link>
         }

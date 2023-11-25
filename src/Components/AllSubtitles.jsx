@@ -12,7 +12,7 @@ function AllSubtitles() {
     return (
         <>
             <Card onClick={() => setLgShow(true)} style={{ width: '13rem', border: '3px solid white', borderRadius: '0px' }}>
-                <Card.Img variant="top-bottom" src={'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/Ag3D9qXjhJ2FUkrlJ0Cv1pgxqYQ.jpg'} />
+                <Card.Img variant="top-bottom" src={'https://m.media-amazon.com/images/M/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UY209_CR0,0,140,209_AL_.jpg'} />
             </Card>
 
             <Modal

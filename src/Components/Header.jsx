@@ -21,13 +21,15 @@ function Header({ insideSubtitles }) {
   return (
     <Navbar expand="lg fixed-top" className='bg-warning'>
       <Container >
-        <Navbar.Brand href="#home">
-          <img
-            alt=""
-            src={Header_logo}
-            width="100"
-            className="d-inline-block align-top"
-          />
+        <Navbar.Brand >
+          <Link to={'/'}>
+            <img
+              alt=""
+              src={Header_logo}
+              width="100"
+              className="d-inline-block align-top"
+            />
+          </Link>
         </Navbar.Brand>
 
         <Nav>
