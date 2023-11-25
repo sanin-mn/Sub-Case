@@ -1,38 +1,82 @@
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
-import TableModal from './TableModal';
+import { BASEURL } from '../services/baseUrl';
 
 
-function AllSubtitles() {
+
+function AllSubtitles({ movies }) {
 
     const [lgShow, setLgShow] = useState(false);
 
     return (
-        <>
-            <Card onClick={() => setLgShow(true)} style={{ width: '13rem', border: '3px solid white', borderRadius: '0px' }}>
-                <Card.Img variant="top-bottom" src={'https://m.media-amazon.com/images/M/MV5BZGJkMDUwZWQtYTMzMS00NTg5LWE1ZTYtOTVhMDI4NGI1YjMyXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UY209_CR0,0,140,209_AL_.jpg'} />
-            </Card>
+        < >
+            <div >
+                <Card onClick={() => setLgShow(true)} style={{ width: '13rem', border: '3px solid white', borderRadius: '0px' }}>
+                    <Card.Img variant="top-bottom" src={movies?.movieImage?`${BASEURL}/uploads/${movies.movieImage}`:null} />
+                </Card>
+                <p className='text-white'>{movies.moviename}</p>
+            </div>
 
             <Modal
                 size="lg"
                 show={lgShow}
                 onHide={() => setLgShow(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
+                class="modal-dialog modal-fullscreen"
+                style={{backgroundColor:'black'}}
+
             >
-                <Modal.Header closeButton className='bg-danger'>
+                <Modal.Header closeButton className='bg-warning'>
                     <Modal.Title id="example-modal-sizes-title-lg">
-                        <h4>Movie Name</h4>
+                        <h6> {movies.moviename} / Sub Case / Realease : {movies.index}</h6>
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className='bg-danger'>
+                <Modal.Body className='bg-dark'>
                     <h4>About</h4>
-                    <TableModal />
-                    <p><i className="fa-brands fa-imdb fa-2xl me-3"></i>{''}<i className="fa-solid fa-star fa-lg text-warning"></i>63/40</p>
-                    <p className='text-light'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, cupiditate ullam doloribus deserunt placeat, omnis et non, perferendis iure neque impedit! Voluptates ex officia fuga id dicta obcaecati, optio magni!</p>
+
+<Row>
+                            <Col className='text-center' md={4}><img src={movies?.movieImage?`${BASEURL}/uploads/${movies.movieImage}`:null} style={{width:'10rem'}} alt="" /></Col>
+        
+                            {/* table */}
+        
+                           <Col md={8}>
+                                <table style={{ width: "100%" }} border={1} width={500}>
+                                <tr>
+                                    <td><h5 className='ms-3 font-monospace text-white'>Movie</h5></td>
+                                     <td><h6 className='text-white'>{movies.moviename}</h6></td>
+            
+                                    </tr>
+                                    <tr>
+                                    <td><h5 className='ms-3 font-monospace text-white'>Language</h5></td>
+                                     <td><h6 className='text-white'>{movies.language}</h6></td>
+            
+                                    </tr>
+                                    <tr>
+                                        <td><h5 className='ms-3 font-monospace text-white'>Director</h5></td>
+                                        <td><h6 className='text-white'>{movies.director}</h6></td>
+            
+                                    </tr>
+                                    <tr>
+                                        <td><h5 className='ms-3 font-monospace text-white'>Transalator</h5></td>
+                                        <td><h6 className='text-white '>{movies.transalator}</h6></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h5 className='ms-3 font-monospace text-white'>Genre</h5></td>
+                                        <td><h6 className='text-white '>{movies.genre}</h6></td>
+                                    </tr>
+                                </table>
+                           </Col>
+</Row>
+
+
+                    <div className='mt-5'>
+                        <p><i className="fa-brands fa-imdb fa-2xl me-3 text-warning"></i>{''}<i className="fa-solid fa-star fa-lg text-warning"></i><span className='text-white'>{movies.imdb}</span></p>
+                        </div>
+                    <p className='text-light'>{movies.info}</p>
                 </Modal.Body>
-                <Modal.Footer className='d-flex justify-content-center bg-danger'>
+                <Modal.Footer className='d-flex justify-content-center bg-dark'>
                     <Button className='fw-bold' variant="warning">Download {' '}<i class="fa-solid fa-file-arrow-down fa-bounce"></i></Button>
                 </Modal.Footer>
             </Modal>

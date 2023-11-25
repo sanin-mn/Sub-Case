@@ -5,26 +5,38 @@ import HomeDescription from '../Components/HomeDescription'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import { homeMovieAPI } from '../services/allApis'
 
 
 
 
 function Home() {
   const [isLoggedIn,setLoggedIn] = useState(false)
+  const [allMovies,setAllMovies] = useState([])
+
+  const getHomeMovies = async ()=>{
+    const result = await homeMovieAPI()
+    if(result.status===200){
+      setAllMovies(result.data)
+    }else{
+      alert(result.response.data)
+    }
+  }
 
   useEffect(()=>{
-    if(localStorage.getItem("existingUser")){
+    if(sessionStorage.getItem("token")){
       setLoggedIn(true)
     }else{
       setLoggedIn(false)
     }
+    getHomeMovies()
   },[])
 
   return (
     <div className='bg-dark w-100' style={{ paddingTop: '100px', overflowX: 'hidden' }}>
       <h5 className='text-center text-white'>New Releases</h5>
 
-      <HomeSubs />
+      <HomeSubs allMovies={allMovies}/>
 
       <div className="text-center mt-5">
         

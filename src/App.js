@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 import Auth from './Components/Auth';
 import Account from './Pages/Account';
 import Admin from './Pages/Admin';
+import AdminMovies from './Pages/AdminMovies';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/account' element={<Account/>}/>
         <Route path='/admin' element={<Admin/>}/>
+        <Route path='/adminmovies' element={<AdminMovies/>}/>
       </Routes>
       <Footer/>
     </div>

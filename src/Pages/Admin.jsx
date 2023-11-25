@@ -1,19 +1,20 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addMovieAPI } from '../services/allApis';
+import { Link } from 'react-router-dom';
 
 function Admin() {
+    const [token,setToken] = useState("")
     const [movieDetails, setMovieDetails] = useState({
         moviename: "", language: "", director: "", transalator: "", genre: "", imdb: "", info: "", image: "", subfile: "", userId: ""
     })
     const [preview, setPreview] = useState("")
     useEffect(() => {
-        if (localStorage.getItem("existingUser")) {
+        if (localStorage.getItem("existingUser")&&sessionStorage.getItem("token")) {
             setMovieDetails({ ...movieDetails, userId: JSON.parse(localStorage.getItem("existingUser"))._id })
+            setToken(sessionStorage.getItem("token"))
         }
     }, [])
 
@@ -55,7 +56,7 @@ function Admin() {
             reqBody.append("userId", userId)
 
             const reqHeader = {
-                "Content-Type": "multipart/form-data"
+                "Content-Type": "multipart/form-data" , "Authorization" : `Bearer ${token}`
             }
             const result = await addMovieAPI(reqBody, reqHeader)
             console.log(result);
@@ -65,7 +66,7 @@ function Admin() {
                 toast.warning(result.response.data)
                 console.log(result);
                 setMovieDetails({
-                    moviename: "", language: "", director: "", transalator: "", genre: "", imdb: "", info: "", image: "", subfile: "", userId: ""
+                    moviename: "", language: "", director: "", transalator: "", genre: "", imdb: "", info: "", image: "", subfile: ""
                 })
             }
         }
@@ -78,10 +79,10 @@ function Admin() {
                 <h4 className='text-white mt-3 text-center'>Admin</h4>
                 <div className='w-100 d-flex justify-content-center'>
                     <div className='text-white p-4 mb-5' style={{ backgroundColor: 'black', height: 'max-content', width: '500px' }}>
-                        <div className='txt'>
+                        <div className='w-100'>
                             <label htmlFor="profileimg" className='text-center'>
                                 <input id='profileimg' onChange={e => setMovieDetails({ ...movieDetails, image: e.target.files[0] })} type="file" style={{ display: 'none' }} />
-                                <img width={'80px'} src={preview ? preview : "https://tse2.mm.bing.net/th?id=OIP.g8WcRlCDEoR6jW4dnWJp2gHaHa&pid=Api&P=0&h=180"}
+                                <img  width={'80px'} src={preview ? preview : "https://tse2.mm.bing.net/th?id=OIP.g8WcRlCDEoR6jW4dnWJp2gHaHa&pid=Api&P=0&h=180"}
                                     alt="pp" />
                             </label>
                             <input type="text" className='form-control' placeholder='Project name' value={movieDetails.moviename}
@@ -112,6 +113,8 @@ function Admin() {
                                 <button className='btn btn-info' onClick={clearForm}>Cancel</button>
                         </div>
                     </div>
+                    <Link to={'/adminmovies'}><p className='text-white'>admin movie</p></Link>
+
                 </div>
 
             </div>
