@@ -31,6 +31,10 @@ export const allMovieAPI = async (header)=>{
     return await commonAPI("GET",`${BASEURL}/movies/all`,"",header)   
 }
 
+// edit movie
+export const editMovieAPI = async (movieId,reqBody,reqHeader)=>{
+    return await commonAPI("PUT",`${BASEURL}/movie/edit/${movieId}`,reqBody,reqHeader)   
+}
 
 // delete movie
 export const deleteMovieAPI = async (movieId,reqHeader)=>{
