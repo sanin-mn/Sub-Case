@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { adminMovieAPI } from '../services/allApis'
+import { adminMovieAPI, deleteMovieAPI } from '../services/allApis'
+import EditMovie from '../Components/EditMovie'
 
 function AdminMovies() {
     const [movies, setMovies] = useState([])
@@ -31,6 +32,20 @@ function AdminMovies() {
         }
     }, [token])
 
+    const handleDelete = async (e,id)=>{
+        e.preventDefault()
+        const reqHeader = {
+            "Content-Type": "application/json" , "Authorization" : `Bearer ${token}`
+        }
+        const result = await deleteMovieAPI(id,reqHeader)
+        if(result.status===200){
+            alert("Removed Successfully")
+            getAdminMovies()
+        }else{
+            console.log(result);
+            alert(result.response.data)
+        }
+    }
 
     return (
         <div>
@@ -42,8 +57,8 @@ function AdminMovies() {
                             <div className="border container d-flex align-items-center text-primary rounded p-2 mb-3">
                                 <h5 className='text-white'>{movie.moviename}</h5>
                                 <div className="icons ms-auto">
-                                    <button className='btn me-2' ><i class="fa-solid fa-edit text-success"></i></button>
-                                    <button className='btn me-2' ><i class="fa-solid fa-trash text-danger"></i></button>
+                                    <button className='btn'><EditMovie displayMovie={movie}/></button>
+                                    <button onClick={(e)=>handleDelete(e,movie._id)} className='btn me-2' ><i class="fa-solid fa-trash text-danger"></i></button>
                                 </div>
                             </div>
                         )) :

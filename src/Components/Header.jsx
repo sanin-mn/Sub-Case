@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 function Header({ insideSubtitles }) {
   const [isLoggedIn,setLoggedIn] = useState(false)
+  const [searchKey,setSearchKey] = useState("")
 
   useEffect(()=>{
     if(sessionStorage.getItem("token")){
@@ -42,6 +43,7 @@ function Header({ insideSubtitles }) {
                 placeholder="Search"
                 className="me-2 rounded-pill"
                 aria-label="Search"
+                onChange={e=>setSearchKey(e.target.value)}
               />
               <Button className="rounded-pill" variant="outline-dark">
                 Search

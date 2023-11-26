@@ -30,3 +30,11 @@ export const homeMovieAPI = async ()=>{
 export const allMovieAPI = async (header)=>{
     return await commonAPI("GET",`${BASEURL}/movies/all`,"",header)   
 }
+
+
+// delete movie
+export const deleteMovieAPI = async (movieId,reqHeader)=>{
+    return await commonAPI("DELETE",`${BASEURL}/movie/delete/${movieId}`,{},reqHeader)   
+}
+
+
