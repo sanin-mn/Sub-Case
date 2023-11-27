@@ -18,3 +18,20 @@ table, td, th {
 tr:nth-child(even) {
   background-color: #1e1e1e;
 }
+
+/* image hover */
+.img-hover:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.img-hover {
+  opacity: 1;
+}
+
+/* banner image */
+.img-banner{
+  opacity: 0.5;
+}
+.img-banner:hover{
+  opacity: 1;
+}

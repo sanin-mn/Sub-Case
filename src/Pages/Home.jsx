@@ -10,8 +10,8 @@ import { homeMovieAPI } from '../services/allApis'
 
 
 
+
 function Home() {
-  const [isLoggedIn,setLoggedIn] = useState(false)
   const [allMovies,setAllMovies] = useState([])
 
   const getHomeMovies = async ()=>{
@@ -24,11 +24,6 @@ function Home() {
   }
 
   useEffect(()=>{
-    if(sessionStorage.getItem("token")){
-      setLoggedIn(true)
-    }else{
-      setLoggedIn(false)
-    }
     getHomeMovies()
   },[])
 
@@ -40,22 +35,24 @@ function Home() {
 
       <div className="text-center mt-5">
         
-      { isLoggedIn?
-        <Link to={'/subtitles'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
-         All Subtitle{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade d-inline"></i>
+
+        <Link to={'/subtitles'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold ' style={{width:'20rem'}}>
+         All Subtitle{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade"></i>
         </Button></Link>:
-        <Link to={'/login'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold d-inline ' style={{width:'20rem'}}>
-        Getting Started{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade d-inline"></i>
-       </Button></Link>
-        }
+
       </div>
 
-      <section style={{ marginTop: '4rem' }} >
+      <section style={{ marginTop: '7rem' }} >
         <HomeDescription />
       </section>
 
-      <section style={{ marginTop: '5rem', marginBottom: '10rem' }}>
+      <section style={{ marginTop: '5rem', marginBottom: '8rem' }}>
         <AboutAccord />
+      </section>
+
+      <section className='container text-center mb-5'>
+        <p className='text-secondary'>coming soon</p>
+        <img className='img-banner' style={{width:'100%'}} src={'https://images.fanpop.com/images/image_uploads/movies-banner-movies-673219_800_140.jpg'} alt="" />
       </section>
     </div>
   )

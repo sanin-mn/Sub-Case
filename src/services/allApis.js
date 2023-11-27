@@ -26,9 +26,9 @@ export const homeMovieAPI = async ()=>{
     return await commonAPI("GET",`${BASEURL}/home/homemovies`,"","")   
 }
 
-// home movies
-export const allMovieAPI = async (header)=>{
-    return await commonAPI("GET",`${BASEURL}/movies/all`,"",header)   
+// all movies
+export const allMovieAPI = async ()=>{
+    return await commonAPI("GET",`${BASEURL}/movies/all`,"","")   
 }
 
 // edit movie

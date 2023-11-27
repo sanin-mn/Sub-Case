@@ -74,9 +74,9 @@ function Admin() {
 
     return (
         <>
-            <div className='bg-dark' style={{ paddingTop: '100px' }}>
+            <div className='bg-dark text-center' style={{ paddingTop: '100px' }}>
 
-                <h4 className='text-white mt-3 text-center'>Admin</h4>
+                <h4 className='text-white mt-3 text-center'>Add Movies</h4>
                 <div className='w-100 d-flex justify-content-center'>
                     <div className='text-white p-4 mb-5' style={{ backgroundColor: 'black', height: 'max-content', width: '500px' }}>
                         <div className='w-100'>
@@ -85,38 +85,36 @@ function Admin() {
                                 <img  width={'80px'} src={preview ? preview : "https://tse2.mm.bing.net/th?id=OIP.g8WcRlCDEoR6jW4dnWJp2gHaHa&pid=Api&P=0&h=180"}
                                     alt="pp" />
                             </label>
-                            <input type="text" className='form-control' placeholder='Project name' value={movieDetails.moviename}
+                            <input type="text" className='form-control mt-2' placeholder='Project name' value={movieDetails.moviename}
                                 onChange={e => setMovieDetails({ ...movieDetails, moviename: e.target.value })} />
 
-                            <input type="text" className='form-control' placeholder='Language' value={movieDetails.language}
+                            <input type="text" className='form-control mt-1' placeholder='Language' value={movieDetails.language}
                                 onChange={e => setMovieDetails({ ...movieDetails, language: e.target.value })} />
 
-                            <input type="text" className='form-control' placeholder='Director' value={movieDetails.director}
+                            <input type="text" className='form-control mt-1' placeholder='Director' value={movieDetails.director}
                                 onChange={e => setMovieDetails({ ...movieDetails, director: e.target.value })} />
 
-                            <input type="text" className='form-control' placeholder='Transalator' value={movieDetails.transalator}
+                            <input type="text" className='form-control mt-1' placeholder='Transalator' value={movieDetails.transalator}
                                 onChange={e => setMovieDetails({ ...movieDetails, transalator: e.target.value })} />
 
-                            <input type="text" className='form-control' placeholder='Genre' value={movieDetails.genre}
+                            <input type="text" className='form-control mt-1' placeholder='Genre' value={movieDetails.genre}
                                 onChange={e => setMovieDetails({ ...movieDetails, genre: e.target.value })} />
 
-                            <input type="text" className='form-control' placeholder='Imdb' value={movieDetails.imdb}
+                            <input type="text" className='form-control mt-1' placeholder='Imdb' value={movieDetails.imdb}
                                 onChange={e => setMovieDetails({ ...movieDetails, imdb: e.target.value })} />
 
-                            <input type="text" className='form-control' placeholder='Info' value={movieDetails.info}
+                            <input type="text" className='form-control mt-1' placeholder='Info' value={movieDetails.info}
                                 onChange={e => setMovieDetails({ ...movieDetails, info: e.target.value })} />
 
-                            <input type="file" className='form-control' placeholder='Subfile'
+                            <input type="file" className='form-control mt-1' placeholder='Subfile'
                                 onChange={e => setMovieDetails({ ...movieDetails, subfile: e.target.files[0] })} />
 
-                                <button className='btn btn-warning' onClick={handleUpload}>Upload</button>
-                                <button className='btn btn-info' onClick={clearForm}>Cancel</button>
+                                <button className='btn btn-warning mt-3 me-2' onClick={handleUpload}>Upload</button>
+                                <button className='btn btn-info mt-3 ms-2' onClick={clearForm}>Cancel</button>
                         </div>
-                    </div>
-                    <Link to={'/adminmovies'}><p className='text-white'>admin movie</p></Link>
-
+                    </div>             
                 </div>
-
+                <Link to={'/adminmovies'}><button className='btn btn-outline-warning mb-3'>View Movies</button></Link>
             </div>
             <ToastContainer position='top-center'
                 autoClose={2000} theme='colored' />

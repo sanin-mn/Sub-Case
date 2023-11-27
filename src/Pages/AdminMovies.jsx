@@ -51,12 +51,12 @@ function AdminMovies() {
         <div>
             <div>
                 <div className='text-center vh-100 bg-dark ' style={{ paddingTop: '100px' }}>
-                    <h1 className='text-white'>Admin Movies</h1>
+                    <h3 className='text-white'>Movie List</h3>
                     <div className="mt-5">
                         {movies?.length > 0 ? movies?.map(movie => (
                             <div className="border container d-flex align-items-center text-primary rounded p-2 mb-3">
-                                <h5 className='text-white'>{movie.moviename}</h5>
-                                <div className="icons ms-auto">
+                                <h5 className='text-white ms-5'>{movie.moviename}</h5>
+                                <div className="icons ms-auto me-5">
                                     <button className='btn'><EditMovie displayMovie={movie}/></button>
                                     <button onClick={(e)=>handleDelete(e,movie._id)} className='btn me-2' ><i class="fa-solid fa-trash text-danger"></i></button>
                                 </div>

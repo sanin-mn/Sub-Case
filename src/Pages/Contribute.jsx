@@ -4,10 +4,10 @@ import Form from 'react-bootstrap/Form';
 
 function Contribute() {
   return (
-    <div className='bg-dark' style={{ paddingTop: '100px' }}>
+    <div className='bg-dark vh-100' style={{ paddingTop: '100px' }}>
 
       <h4 className='text-white mt-3 text-center'>To Contribute</h4>
-      <p className='text-secondary fs-5 p-3 text-center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, quo. Dolores adipisci delectus asperiores eos magnam quis.</p>
+      <p className='text-secondary fs-5 p-3 text-center'>Send your valuable contribution , we'll responsible for your work and give feedback immedietly</p>
 
       <div className='w-100 d-flex justify-content-center'>
         <div className='text-white p-4 mb-5' style={{ backgroundColor: 'black', height: 'max-content', width: 'max-content' }}>
