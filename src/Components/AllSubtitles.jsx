@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import { BASEURL } from '../services/baseUrl';
 
 
 
-function AllSubtitles({ movies }) {
+function AllSubtitles({ movies,index}) {
 
     const [lgShow, setLgShow] = useState(false);
 
@@ -14,7 +14,7 @@ function AllSubtitles({ movies }) {
         < >
             <div >
                 <Card className='img-hover' onClick={() => setLgShow(true)} style={{ width: '11rem', border: '3px solid white', borderRadius: '0px' }}>
-                    <Card.Img variant="top-bottom" src={movies?.movieImage ? `${BASEURL}/uploads/${movies.movieImage}` : null} />
+                    <Card.Img className='img-hover' variant="top-bottom" src={movies?.movieImage ? `${BASEURL}/uploads/${movies.movieImage}` : null} />
                 </Card>
                 <p className='text-white'>{movies.moviename}</p>
             </div>
@@ -30,7 +30,7 @@ function AllSubtitles({ movies }) {
             >
                 <Modal.Header closeButton className='bg-warning'>
                     <Modal.Title id="example-modal-sizes-title-lg">
-                        <h6> {movies.moviename} / Sub Case / Realease : {movies.index}</h6>
+                        <h6> {movies.moviename} / Sub Case / Realease : {index+1}</h6>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='bg-dark'>
@@ -43,6 +43,7 @@ function AllSubtitles({ movies }) {
 
                         <Col md={8}>
                             <table style={{ width: "100%" }} border={1} width={500}>
+                        
                                 <tr>
                                     <td><h6 className='ms-3  text-white'>Movie</h6></td>
                                     <td><h6 className='text-white'>{movies.moviename}</h6></td>

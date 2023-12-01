@@ -16,7 +16,7 @@ function Footer() {
               <Link to={'/'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Home</Link>
               <Link to={'/contribute'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Contribute</Link>
               <Link to={'/about'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>About</Link>
-              <Link to={'/subtitles'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>All Sub</Link>
+              <Link to={'/subtitles'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Subtitles</Link>
 
             </p>
             <ul className="p-0">
@@ -30,7 +30,7 @@ function Footer() {
         <div className="row mt-3">
           <div className="col-md-12 text-center">
             <p className="copyright">
-              Copyright &copy; All rights reserved | Sub case subtitle organization
+              Copyright &copy; All rights reserved | Sub case subtitle <i className="fa-regular fa-closed-captioning"></i> organization
             </p>
           </div>
         </div>

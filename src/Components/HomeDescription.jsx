@@ -1,14 +1,13 @@
 import React from 'react'
 import "aos/dist/aos.css";
-import { useEffect } from 'react';
 import AOS from 'aos';
 
 
 function HomeDescription() {
 
-  useEffect(()=>{
-    AOS.init()
-  })
+  
+    AOS.refresh()
+  
 
   return (
     <div className='d-flex justify-content-center align-items-center container' style={{height:'60vh',backgroundColor:'#101010',borderRadius:'1px 80px'}}>

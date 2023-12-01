@@ -1,10 +1,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { useEffect } from 'react'
 import { useState } from 'react'
 
 function Account() {
+  const navigate = useNavigate()
   const [userName,setUserName] = useState("")
   const [isLoggedIn,setLoggedIn] = useState(false)
 
@@ -21,6 +22,14 @@ function Account() {
             setUserName(JSON.parse(localStorage.getItem("existingUser")).username)
         }
     },[])
+
+    const handleLogout = () =>{
+      sessionStorage.removeItem("token")
+      localStorage.removeItem("existingUser")
+      localStorage.removeItem("Role")
+      setLoggedIn(false)
+      navigate('/')
+    }
   return (
     <div>
     <div className='text-center vh-100 bg-dark d-flex align-items-center justify-content-center' style={{paddingTop:'100px'}}>
@@ -34,7 +43,7 @@ function Account() {
           <Link to={'/admin'}><button className='btn btn-outline-warning me-1'>Add Movies</button></Link>
           <Link to={'/adminmovies'}><button className='btn btn-outline-warning ms-1'>View Movies</button></Link>
         </div>
-        <button className='btn btn-danger mt-3'>Logout</button>
+        <button onClick={handleLogout} className='btn btn-danger mt-3'>Logout</button>
       </Card.Body>
     </Card>
     :

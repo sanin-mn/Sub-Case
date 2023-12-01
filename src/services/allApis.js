@@ -31,6 +31,11 @@ export const allMovieAPI = async ()=>{
     return await commonAPI("GET",`${BASEURL}/movies/all`,"","")   
 }
 
+// searched movies
+export const searchMovieAPI = async (searchKey)=>{
+    return await commonAPI("GET",`${BASEURL}/movies/search?search=${searchKey}`,"","")   
+}
+
 // edit movie
 export const editMovieAPI = async (movieId,reqBody,reqHeader)=>{
     return await commonAPI("PUT",`${BASEURL}/movie/edit/${movieId}`,reqBody,reqHeader)   

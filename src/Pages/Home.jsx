@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <div className='bg-dark w-100' style={{ paddingTop: '100px', overflowX: 'hidden' }}>
-      <h5 className='text-center text-white'>New Releases</h5>
+      <h5 className='text-center text-secondary'>New Releases</h5>
 
       <HomeSubs allMovies={allMovies}/>
 
@@ -37,8 +37,8 @@ function Home() {
         
 
         <Link to={'/subtitles'} style={{textDecoration:'none'}}><Button variant="outline-warning" className='fw-bold ' style={{width:'20rem'}}>
-         All Subtitle{''}{' '}<i className="fa-solid fa-chevron-right fa-beat-fade"></i>
-        </Button></Link>:
+         All Subtitle <i class="fa-regular fa-closed-captioning "></i>
+        </Button></Link>
 
       </div>
 

@@ -4,15 +4,14 @@ import Card from 'react-bootstrap/Card';
 import { Col, Row } from 'react-bootstrap'
 import { BASEURL } from '../services/baseUrl';
 import Aos from 'aos';
-import { useEffect } from 'react';
 
 
 
 
 function HomeSubs({ allMovies }) {
-  useEffect(()=>{
+
     Aos.init()
-  },[])
+
   return (
     <div>
       <Marquee>
