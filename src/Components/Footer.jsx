@@ -10,7 +10,6 @@ function Footer() {
           <div className="col-md-12 text-center">
             <h4 className='d-inline-block text-white mt-3'>
               <img src={footer_logo} width={80} alt="" />
-              Sub Case
             </h4>
             <p className="menu p-3">
               <Link to={'/'} style={{ textDecoration: 'none', color: 'white', margin: '0.5rem' }}>Home</Link>

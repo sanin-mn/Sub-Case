@@ -78,7 +78,7 @@ function Admin() {
 
                 <h4 className='text-white mt-3 text-center'>Add Movies</h4>
                 <div className='w-100 d-flex justify-content-center'>
-                    <div className='text-white p-4 mb-5' style={{ backgroundColor: 'black', height: 'max-content', width: '500px' }}>
+                    <div className='text-white p-4 mb-4' style={{ backgroundColor: 'black', height: 'max-content', width: '500px' }}>
                         <div className='w-100'>
                             <label htmlFor="profileimg" className='text-center'>
                                 <input id='profileimg' onChange={e => setMovieDetails({ ...movieDetails, image: e.target.files[0] })} type="file" style={{ display: 'none' }} />
@@ -110,7 +110,7 @@ function Admin() {
                                 onChange={e => setMovieDetails({ ...movieDetails, subfile: e.target.files[0] })} />
 
                                 <button className='btn btn-warning mt-3 me-2' onClick={handleUpload}>Upload</button>
-                                <button className='btn btn-info mt-3 ms-2' onClick={clearForm}>Cancel</button>
+                                <button className='btn btn-danger mt-3 ms-2' onClick={clearForm}>Cancel</button>
                         </div>
                     </div>             
                 </div>

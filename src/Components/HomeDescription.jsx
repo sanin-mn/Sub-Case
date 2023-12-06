@@ -5,9 +5,8 @@ import AOS from 'aos';
 
 function HomeDescription() {
 
-  
-    AOS.refresh()
-  
+    AOS.init()
+
 
   return (
     <div className='d-flex justify-content-center align-items-center container' style={{height:'60vh',backgroundColor:'#101010',borderRadius:'1px 80px'}}>

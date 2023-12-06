@@ -13,7 +13,7 @@ function AllSubtitles({ movies,index}) {
     return (
         < >
             <div >
-                <Card className='img-hover' onClick={() => setLgShow(true)} style={{ width: '11rem', border: '3px solid white', borderRadius: '0px' }}>
+                <Card className='img-hover' onClick={() => setLgShow(true)} style={{ width: '10rem', border: '3px solid white', borderRadius: '0px' }}>
                     <Card.Img className='img-hover' variant="top-bottom" src={movies?.movieImage ? `${BASEURL}/uploads/${movies.movieImage}` : null} />
                 </Card>
                 <p className='text-white'>{movies.moviename}</p>

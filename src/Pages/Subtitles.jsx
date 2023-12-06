@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { allMovieAPI, searchMovieAPI } from '../services/allApis';
+import Spin from '../Components/Spin';
 
 function Subtitles() {
   const [searchKey, setSearchKey] = useState("")
@@ -50,7 +51,7 @@ function Subtitles() {
         />
       </Form>
 
-      <p className='text-center text-white '>All Movies</p>
+      <p className='text-center text-secondary mt-2 '>All Movies</p>
 
       {/* cards */}
       <div class="container text-center">

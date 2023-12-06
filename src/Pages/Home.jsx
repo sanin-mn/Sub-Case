@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { homeMovieAPI } from '../services/allApis'
-
+import Spin from '../Components/Spin'
 
 
 
@@ -27,8 +27,13 @@ function Home() {
     getHomeMovies()
   },[])
 
+
+
   return (
+    
     <div className='bg-dark w-100' style={{ paddingTop: '100px', overflowX: 'hidden' }}>
+
+
       <h5 className='text-center text-secondary'>New Releases</h5>
 
       <HomeSubs allMovies={allMovies}/>
